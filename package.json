@@ -1,40 +1,42 @@
 {
-  "name": "cmd-nice",
-  "version": "0.3.0",
-  "description": "another cmd transport library",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.alibaba-inc.com:nw/cmd-nice.git"
-  },
-  "keywords": [
-    "cmd",
-    "seajs"
-  ],
-  "author": "garcia.wul <garcia.wul@alibaba-inc.com>",
-  "license": "MIT",
-  "dependencies": {
-    "argparse": "^0.1.15",
-    "cardinal": "^0.4.4",
-    "chalk": "^0.5.1",
-    "clean-css": "^2.2.16",
-    "css-parse": "^2.0.0",
-    "css-stringify": "^2.0.0",
-    "cssjoin": "^0.3.1",
-    "graceful-fs": "^3.0.3",
-    "handlebars": "^2.0.0",
-    "is-url": "^1.1.0",
-    "js-beautify": "^1.5.4",
-    "less": "^1.7.5",
-    "log": "^1.4.0",
-    "moment": "^2.8.3",
-    "q": "^1.0.1",
-    "shutils": "0.0.2",
-    "uglify-js": "^2.4.15",
-    "underscore": "^1.7.0",
-    "underscore.string": "^2.3.3"
-  }
+    "name": "cmd-nice",
+    "version": "0.3.0",
+    "description": "another cmd transport library",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@gitlab.alibaba-inc.com:nw/cmd-nice.git"
+    },
+    "keywords": [
+        "cmd", "seajs"
+    ],
+    "author": "garcia.wul <garcia.wul@alibaba-inc.com>",
+    "license": "MIT",
+    "dependencies": {
+        "argparse": "^0.1.15",
+        "cardinal": "^0.4.4",
+        "chalk": "^0.5.1",
+        "clean-css": "^2.2.16",
+        "css-parse": "^2.0.0",
+        "css-stringify": "^2.0.0",
+        "cssjoin": "^0.3.1",
+        "graceful-fs": "^3.0.3",
+        "handlebars": "^2.0.0",
+        "is-url": "^1.1.0",
+        "js-beautify": "^1.5.4",
+        "less": "^1.7.5",
+        "log": "^1.4.0",
+        "moment": "^2.8.3",
+        "q": "^1.0.1",
+        "shutils": "0.0.2",
+        "uglify-js": "^2.4.15",
+        "underscore": "^1.7.0",
+        "underscore.string": "^2.3.3"
+    },
+    "bin": {
+        "cmd-nice": "./bin/cmd-nice.js"
+    }
 }

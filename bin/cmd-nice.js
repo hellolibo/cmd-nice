@@ -13,6 +13,7 @@ var fs = require("fs");
 var path = require("path");
 var _ = require("underscore");
 var Index = require("../index");
+var extend = require("extend");
 
 var argumentParser = new ArgumentParser({
     version: require("../package.json").version,
@@ -20,20 +21,29 @@ var argumentParser = new ArgumentParser({
     description: "command line tool for cmd-nice"
 });
 argumentParser.addArgument(["--action"], {
-    description: "action type: transport, debug, concat",
+    help: "action type: transport, debug, concat",
     type: "string",
     required: false,
     dest: "action",
     defaultValue: "transport"
 });
+
 argumentParser.addArgument(["--config"], {
-    description: "config file",
+    help: "config for transport/debug/concat",
+    type: "string",
+    required: false,
+    dest: "config"
+});
+
+argumentParser.addArgument(["--configFile"], {
+    help: "config file",
     type: "string",
     required: false,
     dest: "configFile"
 });
+
 argumentParser.addArgument(["--input"], {
-    description: "input files",
+    help: "input files",
     type: "string",
     required: true,
     dest: "inputFiles",
@@ -91,6 +101,19 @@ var concatConfig = {
 var debugConfig = {
     postfix: "-debug"
 };
+
+if (args.config && fs.existsSync(args.config)) {
+    var userConfig = require(args.config);
+    if (args.action === "transport") {
+        extend(true, transportConfig, userConfig);
+    }
+    else if (args.action === "concat") {
+        extend(true, concatConfig, userConfig);
+    }
+    else if (args.action === "debug") {
+        extend(true, debugConfig, userConfig);
+    }
+}
 
 if (args.action === "transport") {
     transport();
